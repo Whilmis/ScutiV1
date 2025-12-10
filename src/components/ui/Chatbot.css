@@ -1,0 +1,230 @@
+/* src/components/ui/Chatbot.css */
+
+.chatbot-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: none;
+  gap: 1rem;
+}
+
+/* --- BOTÓN FLOTANTE --- */
+.chatbot-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--scuti-teal);
+  color: white;
+  border: none;
+  box-shadow: 0 10px 30px rgba(45, 155, 155, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1) rotate(5deg);
+  background: #258585;
+}
+
+/* --- VENTANA DE CHAT --- */
+.chatbot-window {
+  width: 350px;
+  height: 500px;
+  background: rgba(11, 37, 64, 0.95); /* Navy casi opaco */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+  /* Animación de entrada */
+  transform-origin: bottom right;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chatbot-container.open .chatbot-window {
+    pointer-events: auto;
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Header */
+.chat-header {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  color: var(--scuti-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background: #10b981; /* Verde online */
+  border-radius: 50%;
+  border: 2px solid var(--scuti-navy);
+}
+
+.chat-title h4 {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.chat-title span {
+  font-size: 0.8rem;
+  color: var(--scuti-teal-light);
+}
+
+.close-chat {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+/* Mensajes */
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.message {
+  max-width: 80%;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  animation: popIn 0.3s ease;
+}
+
+.message.bot {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-bottom-left-radius: 4px;
+}
+
+.message.user {
+  background: var(--scuti-teal);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+/* Escribiendo... */
+.message.typing {
+  display: flex;
+  gap: 4px;
+  padding: 1rem;
+  width: fit-content;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Opciones (Chips) */
+.chat-options {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chat-options button {
+  background: transparent;
+  border: 1px solid var(--scuti-teal);
+  color: var(--scuti-teal);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chat-options button:hover {
+  background: var(--scuti-teal);
+  color: white;
+}
+
+/* Input (Fake) */
+.chat-input-area {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input-area input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 1rem;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.chat-input-area button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Responsive Móvil */
+@media (max-width: 480px) {
+  .chatbot-window {
+    width: calc(100vw - 4rem); /* Casi todo el ancho */
+    height: 450px;
+  }
+}

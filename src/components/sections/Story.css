@@ -1,0 +1,199 @@
+/* src/components/sections/Story.css */
+
+.story-section {
+  padding: 8rem 2rem;
+  background-color: var(--scuti-navy); /* Fondo Oscuro */
+  position: relative;
+  overflow: hidden;
+}
+
+.story-container {
+  max-width: 1000px; /* Un poco más estrecho para centrar la atención */
+  margin: 0 auto;
+}
+
+.story-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.story-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--scuti-cream);
+  margin-bottom: 1rem;
+}
+
+.story-subtitle {
+  font-size: 1.25rem;
+  color: var(--scuti-teal-light);
+  opacity: 0.8;
+}
+
+/* --- TIMELINE CONTAINER --- */
+.timeline {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* La línea vertical central */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.1); /* Línea sutil */
+  transform: translateX(-50%);
+}
+
+/* Efecto de degradado en la línea (opcional) */
+.timeline-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* Solo ilumina la parte superior por ahora */
+  background: linear-gradient(to bottom, var(--scuti-teal), transparent);
+  opacity: 0.5;
+}
+
+/* --- ITEMS (Izquierda / Derecha) --- */
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 2rem 3rem;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right; /* Texto alineado hacia la línea central */
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* --- PUNTOS CENTRALES (Estrellas) --- */
+.timeline-dot {
+  position: absolute;
+  top: 2.5rem; /* Alineado con el top de la tarjeta */
+  width: 20px;
+  height: 20px;
+  background: var(--scuti-navy); /* Color fondo para tapar la línea */
+  border: 2px solid var(--scuti-teal);
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot-inner {
+  width: 8px;
+  height: 8px;
+  background: var(--scuti-cream);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--scuti-teal); /* Brillo */
+}
+
+/* Posición del punto según lado */
+.timeline-item.left .timeline-dot {
+  right: -10px; /* -10px porque el ancho es 20px, para centrar en la línea */
+}
+
+.timeline-item.right .timeline-dot {
+  left: -10px;
+}
+
+/* --- TARJETAS DE CONTENIDO --- */
+.timeline-content {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  border-color: var(--scuti-teal);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(45, 155, 155, 0.1);
+  color: var(--scuti-teal);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  color: var(--scuti-cream);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-loc {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--scuti-teal-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  
+  /* Alineación flex según lado */
+  justify-content: flex-end; 
+}
+
+.timeline-item.right .timeline-loc {
+  justify-content: flex-start;
+}
+
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 768px) {
+  /* La línea se mueve a la izquierda */
+  .timeline-line {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 3.5rem; /* Espacio para la línea */
+    padding-right: 1rem;
+  }
+  
+  /* Reset de posiciones para móvil */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left; /* Todo a la izquierda */
+  }
+  
+  /* Los puntos se alinean a la izquierda */
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 10px; /* Centrado en la línea de 20px */
+    right: auto;
+  }
+  
+  .timeline-loc {
+    justify-content: flex-start;
+  }
+}

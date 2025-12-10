@@ -1,0 +1,210 @@
+/* src/components/sections/SocialHub.css */
+
+/* --- 1. SECCIÓN PRINCIPAL (FONDO OSCURO) --- */
+.social-section {
+  padding: 8rem 2rem;
+  background-color: #081b2e; /* Navy Profundo (Casi negro) */
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Forzamos texto blanco */
+}
+
+.social-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.social-card.tiktok { 
+  animation: float 6s ease-in-out infinite; 
+}
+
+/* --- 2. CABECERA --- */
+.social-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.social-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.social-subtitle {
+  font-size: 1.25rem;
+  color: var(--scuti-teal-light);
+  opacity: 0.8;
+}
+
+/* --- 3. SISTEMA ORBITAL (FONDO BRILLANTE) --- */
+.orbit-system {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* El Núcleo Brillante de fondo */
+.orbit-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(45, 155, 155, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.core-glow {
+  width: 100%;
+  height: 100%;
+}
+
+/* --- 4. GRID DE TARJETAS (4 COLUMNAS) --- */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Columnas */
+  gap: 1.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- 5. ESTILO DE TARJETA (GLASSMORPHISM) --- */
+.social-card {
+  background: rgba(255, 255, 255, 0.03); /* Cristal muy transparente */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Para que todas tengan la misma altura */
+}
+
+/* Hover en tarjeta */
+.social-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px) scale(1.02);
+  border-color: var(--scuti-teal);
+  animation-play-state: paused;
+}
+
+/* Iconos (Caja cuadrada) */
+.social-icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(11, 37, 64, 0.8); /* Fondo oscuro para el icono */
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--scuti-teal);
+  transition: all 0.3s;
+}
+
+.social-card:hover .social-icon-box {
+  background: var(--scuti-teal);
+  color: white;
+}
+
+/* Textos de la tarjeta */
+.social-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.social-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+/* Flecha de salida (esquina superior derecha) */
+.arrow-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  opacity: 0;
+  transform: translate(-10px, 10px);
+  transition: all 0.3s;
+  color: var(--scuti-teal);
+}
+
+.social-card:hover .arrow-icon {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* --- 6. ANIMACIONES ESPECÍFICAS --- */
+.social-card.facebook  { animation: float 6s ease-in-out infinite; }
+.social-card.x-social  { animation: float 7s ease-in-out infinite 1s; }
+.social-card.instagram { animation: float 6s ease-in-out infinite 0.5s; }
+.social-card.linkedin  { animation: float 5s ease-in-out infinite 2s; }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --- 7. RESPONSIVE --- */
+
+/* Tablet (2x2) */
+@media (max-width: 1100px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Móvil (1 columna vertical) */
+@media (max-width: 600px) {
+  .social-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .social-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  
+  .social-card {
+    flex-direction: row; /* Icono izquierda, texto derecha */
+    align-items: center;
+    padding: 1.5rem;
+    text-align: left;
+    height: auto;
+  }
+  
+  .social-icon-box {
+    margin-bottom: 0;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0; /* Evita que el icono se aplaste */
+  }
+  
+  .arrow-icon {
+    display: none; /* Ocultar flecha en móvil */
+  }
+}

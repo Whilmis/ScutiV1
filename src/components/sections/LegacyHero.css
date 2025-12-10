@@ -1,0 +1,167 @@
+
+.legacy-hero {
+  position: relative;
+  height: 65vh; /* Un poco más alto para lucir el cielo */
+  min-height: 500px;
+  background: radial-gradient(circle at center, #1a2c4e 0%, #05050a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* --- ESTRELLAS ESTÁTICAS (FONDO) --- */
+.stars-container {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden; z-index: 0;
+}
+
+.star-layer {
+  position: absolute; border-radius: 50%; background: transparent;
+}
+
+.layer-1 {
+  width: 2px; height: 2px;
+  box-shadow: 
+    10vw 10vh #fff, 20vw 80vh #fff, 35vw 35vh #fff, 
+    50vw 10vh #fff, 65vw 85vh #fff, 80vw 20vh #fff, 95vw 45vh #fff;
+  opacity: 0.4;
+  animation: floatStars 120s linear infinite;
+}
+
+.layer-2 {
+  width: 3px; height: 3px;
+  box-shadow: 
+    15vw 60vh rgba(255,255,255,0.6), 
+    75vw 15vh rgba(255,255,255,0.6), 
+    45vw 85vh rgba(255,255,255,0.6);
+  opacity: 0.6;
+  animation: floatStars 180s linear infinite reverse;
+}
+
+/* --- ESTRELLAS FUGACES (ENERGÍA) --- */
+.shooting-star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1), 0 0 0 8px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 1);
+  animation: shooting 4s linear infinite;
+  opacity: 0;
+}
+
+/* Cola de la estrella */
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+  right: 1px;
+}
+
+/* Retrasos para que no salgan todas a la vez */
+.shooting-star.delay-1 { top: 30%; left: 20%; animation-delay: 1.5s; }
+.shooting-star.delay-2 { top: 70%; left: 80%; animation-delay: 3s; }
+
+/* --- CONTENIDO --- */
+.legacy-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.legacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(251, 191, 36, 0.3); /* Borde dorado suave */
+  color: #fbbf24; 
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.legacy-title {
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.legacy-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* --- EFECTOS INFERIORES --- */
+
+/* 1. Fundido oscuro para conectar con la siguiente sección */
+.legacy-fade-bottom {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 200px;
+  background: linear-gradient(to top, var(--scuti-navy), transparent);
+  z-index: 2;
+}
+
+/* 2. EL GLOW TEAL (Tu petición: Azul verdoso abajo) */
+.legacy-teal-glow {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 250px;
+  /* Glow intenso de marca */
+  background: radial-gradient(ellipse at center, rgba(45, 155, 155, 0.3) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 3;
+  pointer-events: none;
+  animation: pulseGlow 6s ease-in-out infinite;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes floatStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100px); }
+}
+
+@keyframes shooting {
+  0% { transform: rotate(315deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(315deg) translateX(-1000px); opacity: 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legacy-title { font-size: 2.8rem; }
+  .legacy-subtitle { font-size: 1.1rem; }
+  .shooting-star { display: none; } /* Ocultar en móvil para rendimiento */
+}

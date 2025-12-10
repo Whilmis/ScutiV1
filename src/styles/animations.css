@@ -1,0 +1,40 @@
+/* --- CLASES BASE (Estado Inicial: Oculto) --- */
+
+/* 1. Fade Up: Aparece subiendo (El más común) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  /*CurvadeaceleraciónsuaveestiloApple*/transition: opacity 2s cubic-bezier(0.16, 1, 0.3, 1),               transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+  -webkit-transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), ;
+  -moz-transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), ;
+  -ms-transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), ;
+  -o-transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), ;
+}
+
+/* 2. Fade In: Solo aparece (sin moverse) */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity 1.2s ease-out;
+}
+
+/* 3. Scale Up: Crece un poco (Para tarjetas importantes) */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- ESTADO ACTIVO (Visible) --- */
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* --- UTILIDADES DE RETRASO (Stagger) --- */
+/* Para que los elementos no aparezcan todos a la vez, sino en cascada */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.5s; }
+.delay-300 { transition-delay: 0.8s; }
+.delay-400 { transition-delay: 1.1s; }
+.delay-500 { transition-delay: 1.3s; }

@@ -1,0 +1,185 @@
+/* src/components/sections/Technology.css */
+
+.tech-section {
+  padding: 8rem 2rem;
+  background-color: var(--scuti-cream); /* Fondo Claro para contraste */
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Mitad y mitad */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.tech-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.tech-subtitle {
+  font-size: 1.5rem;
+  color: var(--scuti-navy);
+  opacity: 0.7;
+  margin-bottom: 3rem;
+  max-width: 500px;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tech-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.tech-icon-circle {
+  background: white;
+  min-width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--scuti-teal);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.tech-text h3 {
+  font-size: 1.25rem;
+  color: var(--scuti-navy);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.tech-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- COLUMNA DERECHA (Visual) --- */
+.tech-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card-glass {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1/1;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f5 100%);
+  border-radius: 40px;
+  box-shadow: 
+    0 40px 80px -20px rgba(11, 37, 64, 0.15),
+    inset 0 0 0 1px rgba(255,255,255,0.8);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Círculos pulsantes (Simulando el "Núcleo") */
+.pulse-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--scuti-teal);
+  opacity: 0.2;
+}
+
+.core {
+  width: 100px; height: 100px;
+  background: var(--scuti-teal);
+  opacity: 0.1;
+  animation: pulse 3s infinite;
+}
+
+.ring-1 {
+  width: 200px; height: 200px;
+  animation: ripple 4s infinite;
+}
+
+.ring-2 {
+  width: 350px; height: 350px;
+  animation: ripple 4s infinite 1s; /* Retraso */
+}
+
+/* Snippet de código flotante */
+.code-snippet {
+  background: #1e1e1e; /* Estilo VS Code */
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transform: rotate(-5deg);
+  transition: transform 0.5s ease;
+}
+
+.visual-card-glass:hover .code-snippet {
+  transform: rotate(0deg) scale(1.05);
+}
+
+.code-purple { color: #c586c0; }
+.code-blue { color: #569cd6; }
+.code-yellow { color: #dcdcaa; }
+.code-green { color: #6a9955; }
+
+/* Badges flotantes */
+.floating-badge {
+  position: absolute;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  color: var(--scuti-navy);
+}
+
+.ai { top: 20%; right: 20%; animation: float 5s ease-in-out infinite; }
+.chain { bottom: 20%; left: 20%; animation: float 6s ease-in-out infinite 1s; }
+
+/* --- ANIMACIONES --- */
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.1; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.1; }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 0.4; border-width: 2px; }
+  100% { transform: scale(1.5); opacity: 0; border-width: 0px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .tech-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .tech-visual {
+    order: -1; /* Poner visual arriba en móvil */
+  }
+}

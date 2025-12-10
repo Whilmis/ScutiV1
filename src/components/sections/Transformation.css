@@ -1,0 +1,142 @@
+/* src/components/sections/Transformation.css */
+
+/* Usamos un prefijo 'trans-' para todo */
+.trans-section {
+  padding: 8rem 2rem;
+  background-color: var(--scuti-cream) !important;
+  position: relative;
+  z-index: 10;
+}
+
+.trans-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative; /* Evita conflictos de posicionamiento */
+}
+
+.trans-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.trans-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  /* Aseguramos que el degradado funcione */
+  background: linear-gradient(135deg, var(--scuti-navy) 0%, var(--scuti-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trans-subtitle {
+  font-size: 1.25rem;
+  color: var(--scuti-navy);
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- TABLET CONTAINER --- */
+.trans-tablet-wrapper {
+  background: #ffffff;
+  border-radius: 40px;
+  padding: 1rem;
+  box-shadow: 
+    0 50px 100px -20px rgba(11, 37, 64, 0.15),
+    0 30px 60px -30px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.trans-tablet-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.trans-screen {
+  background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+  border-radius: 32px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- LADOS --- */
+.trans-side {
+  flex: 1;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trans-side h3 {
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  font-weight: 700;
+  color: var(--scuti-navy);
+}
+
+.trans-side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trans-side li {
+  margin-bottom: 0.8rem;
+  color: var(--scuti-navy);
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+/* Específicos */
+.trans-old {
+  background-color: rgba(0,0,0,0.02);
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: all 0.4s;
+}
+
+.trans-old:hover {
+  opacity: 0.8;
+  filter: grayscale(0.5);
+}
+
+.trans-new {
+  background: white;
+}
+
+/* --- DIVIDER --- */
+.trans-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+}
+
+.trans-vs-badge {
+  background: var(--scuti-navy);
+  color: white;
+  font-weight: 800;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .trans-screen { flex-direction: column; }
+  .trans-divider { position: relative; top: 0; left: 0; transform: none; margin: -25px auto; }
+}

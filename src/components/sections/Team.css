@@ -1,0 +1,203 @@
+/* src/components/sections/Team.css */
+
+.team-section {
+  padding: 8rem 2rem;
+  background-color: var(--scuti-cream); /* Fondo Claro */
+  position: relative;
+}
+
+.team-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.team-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.team-subtitle {
+  font-size: 1.25rem;
+  color: var(--scuti-navy);
+  opacity: 0.7;
+}
+
+/* --- GRID (ACTUALIZADO: 2 Columnas) --- */
+.team-grid {
+  display: grid;
+  /* CAMBIO: Forzamos 2 columnas exactas */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-bottom: 5rem;
+  /* Centramos el grid y limitamos el ancho para que se vea elegante */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- TARJETA --- */
+.team-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.02);
+  
+  /* Aseguramos altura igual en la fila */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -15px rgba(0,0,0,0.1);
+}
+
+/* Foto */
+.member-photo-frame {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Efecto Blanco y Negro por defecto */
+  filter: grayscale(100%); 
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.team-card:hover .member-photo {
+  /* Color al hacer hover */
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Overlay Social */
+.photo-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(11, 37, 64, 0.8), transparent);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.team-card:hover .photo-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icon {
+  background: white;
+  color: var(--scuti-navy);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+  background: var(--scuti-teal);
+  color: white;
+}
+
+/* Info Texto */
+.member-info {
+  padding: 2rem;
+  text-align: center;
+  /* El contenido ocupa el resto del espacio */
+  flex-grow: 1; 
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  color: var(--scuti-navy);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--scuti-teal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.member-bio {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- PARTNER BLOCK (Nexen) --- */
+.partner-block {
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 3rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.backed-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  margin-bottom: 1.5rem;
+}
+
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.nexen-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--scuti-navy);
+  letter-spacing: -0.02em;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .team-grid {
+    /* En móvil volvemos a 1 columna */
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}

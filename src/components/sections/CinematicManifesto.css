@@ -1,0 +1,297 @@
+/* src/components/sections/CinematicManifesto.css */
+/* src/components/sections/CinematicManifesto.css */
+
+/* ... (Mantén los estilos del .cine-manifesto, .cine-marquee-layer, .outline-text igual que antes) ... */
+
+.cine-manifesto {
+  position: relative;
+  background-color: #020c16; 
+  padding: 10rem 2rem; /* Un poco menos padding para concentrar */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+/* --- TARJETA CENTRAL REDISEÑADA --- */
+.cine-center-stage {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 700px; /* Más ancha para que quepa el texto */
+}
+
+.video-trigger-card {
+  background: rgba(11, 37, 64, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 32px;
+  padding: 3rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.video-trigger-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  border-color: var(--scuti-teal);
+  background: rgba(11, 37, 64, 0.85);
+  box-shadow: 0 40px 80px -20px rgba(45, 155, 155, 0.2);
+}
+
+/* Header de la tarjeta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #10b981;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.dot {
+  width: 6px; height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.manifesto-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--scuti-teal);
+  margin: 0;
+}
+
+/* EL TEXTO QUE PEDISTE */
+.manifesto-quote {
+  font-size: 1.8rem; /* Grande y legible */
+  font-weight: 500;
+  line-height: 1.4;
+  color: white;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  max-width: 90%;
+}
+
+/* Botón Play Integrado */
+.play-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50px;
+  transition: background 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+
+.play-circle-small {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: var(--scuti-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+.cta-text {
+  font-weight: 700;
+  color: var(--scuti-teal-light);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+/* ... (Animaciones scrollText, blink se quedan igual) ... */
+
+/* --- FONDO MARQUEE (ESTILO BLUEPRINT) --- */
+.cine-marquee-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  transform: rotate(-3deg) scale(1.1); /* Inclinación dinámica */
+  opacity: 0.3; /* Sutil */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cine-track {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollText 60s linear infinite;
+}
+
+.cine-track.reverse {
+  animation: scrollTextReverse 70s linear infinite;
+}
+
+/* El truco del texto hueco (Outline) */
+.outline-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-right: 4rem;
+  color: transparent; /* Interior transparente */
+  -webkit-text-stroke: 2px rgba(77, 188, 188, 0.3); /* Borde Teal */
+  letter-spacing: -0.02em;
+}
+
+/* --- TARJETA CENTRAL (TRIGGER) --- */
+
+
+
+/* Efecto Hover: La tarjeta se ilumina y sube */
+.video-trigger-card:hover {
+  transform: scale(1.02);
+  border-color: var(--scuti-teal);
+  background: rgba(11, 37, 64, 0.8);
+  box-shadow: 0 30px 60px -10px rgba(45, 155, 155, 0.2);
+}
+
+
+
+
+
+
+.video-trigger-card:hover .play-circle {
+  transform: scale(1.1);
+  background: var(--scuti-teal);
+  color: white;
+}
+
+.text-content h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+  font-weight: 700;
+}
+
+.text-content p {
+  color: var(--scuti-teal);
+  margin: 0.2rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollTextReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.video-modal-content {
+  width: 100%;
+  max-width: 1000px; /* Un poco más ancho para cine */
+  aspect-ratio: 16/9;
+  background: black;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+  position: relative;
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex; /* Para centrar el video si no ajusta perfecto */
+  align-items: center;
+  justify-content: center;
+}
+
+/* ESTILO DEL REPRODUCTOR LOCAL */
+.local-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que cubra todo el cuadro */
+  border-radius: 24px; /* Coincidir con el contenedor */
+  outline: none;
+}
+
+/* Botón cerrar (reutilizado) */
+.close-video-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+  z-index: 20; /* Encima del video */
+}
+
+.close-video-btn:hover {
+  transform: scale(1.1) rotate(90deg);
+  color: var(--scuti-teal);
+}
+
+/* ANIMACIONES MODAL */
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .close-video-btn {
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6); /* Fondo oscuro para que se vea sobre el video en móvil */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .outline-text { font-size: 4rem; -webkit-text-stroke: 1px rgba(77, 188, 188, 0.3); }
+  .play-content { flex-direction: column; text-align: center; gap: 1rem; }
+  .video-trigger-card { padding: 2rem; }
+  .card-header { margin-bottom: 2rem; }
+}

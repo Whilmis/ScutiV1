@@ -1,0 +1,80 @@
+/* src/pages/Legal.css */
+
+.legal-page {
+  background-color: var(--scuti-navy);
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem; /* Padding superior alto para el Navbar fijo */
+  color: white;
+}
+
+.legal-container {
+  max-width: 800px; /* Ancho de lectura cómodo */
+  margin: 0 auto;
+}
+
+/* Botón Volver */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--scuti-teal-light);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  transition: transform 0.2s;
+}
+
+.back-link:hover {
+  transform: translateX(-5px);
+  color: var(--scuti-teal);
+}
+
+/* Encabezado */
+.legal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+
+.legal-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #fff, #a5f3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.last-updated {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Contenido del Texto */
+.legal-content {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.legal-section {
+  margin-bottom: 3rem;
+}
+
+.legal-section h2 {
+  font-size: 1.5rem;
+  color: var(--scuti-teal);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.legal-section p {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .legal-title { font-size: 2.2rem; }
+  .legal-page { padding-top: 6rem; }
+}

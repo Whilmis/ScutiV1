@@ -1,0 +1,152 @@
+/* src/components/sections/Ecosystem.css */
+
+.eco-section {
+  /* CAMBIO: Fondo Claro para equilibrar el Home */
+  background-color: #fcfae8 !important; 
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--scuti-navy); /* Texto base oscuro */
+}
+
+.eco-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- HEADER --- */
+.eco-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.eco-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--scuti-navy); /* Título Oscuro */
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.eco-subtitle {
+  font-size: 1.25rem;
+  color: #666; /* Gris suave para subtítulo */
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- GRID --- */
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem; /* Un poco más de aire */
+}
+
+/* --- TARJETAS (VERSIÓN LIGHT) --- */
+.eco-card {
+  background: #ffffff; /* Fondo Blanco Puro */
+  border-radius: 32px;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  /* Sombra suave en lugar de borde brillante */
+  box-shadow: 0 20px 40px -10px rgba(11, 37, 64, 0.05);
+  border: 1px solid rgba(0,0,0,0.03);
+  
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.eco-card:hover {
+  transform: translateY(-12px);
+  /* Sombra más pronunciada al subir */
+  box-shadow: 0 40px 60px -15px rgba(11, 37, 64, 0.1);
+  border-color: rgba(45, 155, 155, 0.2);
+}
+
+.eco-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* --- ICONOS --- */
+.eco-icon-box {
+  width: 70px;
+  height: 70px;
+  /* Fondo suave del color de marca */
+  background: rgba(45, 155, 155, 0.1); 
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--scuti-teal); /* Icono Teal */
+  margin-bottom: 2rem;
+  transition: transform 0.4s ease, background 0.4s ease;
+}
+
+.eco-card:hover .eco-icon-box {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--scuti-teal);
+  color: #fff; /* Icono blanco al hover */
+}
+
+/* --- TEXTOS TARJETA --- */
+.eco-tag {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--scuti-teal); /* Etiqueta Teal */
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.eco-card h3 {
+  font-size: 1.8rem;
+  color: var(--scuti-navy);
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.eco-card p {
+  font-size: 1rem;
+  color: #555; /* Texto gris legible */
+  line-height: 1.6;
+}
+
+/* --- EFECTO GLOW (Adaptado a Light) --- */
+/* En modo claro, el glow es un gradiente muy sutil en el fondo */
+.eco-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+    rgba(45, 155, 155, 0.05), /* Muy transparente */
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.eco-card:hover .eco-glow {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .eco-title { font-size: 2.5rem; }
+  .eco-card { padding: 2rem; }
+}

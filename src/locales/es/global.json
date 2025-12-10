@@ -1,0 +1,295 @@
+{
+"nav": {
+    "purpose": "Propósito",
+    "ecosystem": "Ecosistema",
+    "technology": "Tecnología",
+    "innovation": "Innovación",
+    "legacy": "Legado",
+    "story": "Historia",
+    "team": "Equipo",
+    "community": "Comunidad",
+    "waitlist": "Empezar Viaje"
+  },
+  "purpose": {
+    "label": "QUÉ ES SCUTI",
+    "headline": "El sistema operativo para tu crecimiento personal.",
+    "description": "Scuti no es solo un marketplace. Es una infraestructura global que fusiona la Inteligencia Artificial con la economía colaborativa. Unimos a quienes quieren aprender con quienes aman enseñar, eliminando intermediarios y barreras geográficas.",
+    "stats": [
+      { "value": "50K+", "label": "Usuarios Activos" },
+      { "value": "120+", "label": "Países Conectados" },
+      { "value": "500+", "label": "Habilidades Listadas" },
+      { "value": "98%", "label": "Match Exitoso" }
+    ]
+  },
+
+
+  "hero": {
+    "title": "Aprende. Gana. Conecta.",
+    "subtitle": "El primer marketplace de habilidades guiado por una IA que cuida tu crecimiento mental, físico y financiero. Intercambia conocimiento y monetiza tu pasión.",
+    "cta_primary": "Nuestra comunidad",
+    "cta_secondary": "Explorar Mercado"
+  },
+
+"transformation": {
+    "title": "De Asistente a Mentor",
+    "subtitle": "Tecnología que evoluciona contigo.",
+    "old_way": {
+      "title": "El Asistente",
+      "items": ["Pone alarmas", "Búsquedas básicas", "Reactivo"]
+    },
+    "new_way": {
+      "title": "Mentor Scuti",
+      "items": ["Crecimiento Mente y Cuerpo", "Estrategia Financiera", "Guía Proactiva"]
+    }
+  },
+  "ecosystem": {
+    "title": "Sinergia Total",
+    "subtitle": "Un ecosistema diseñado para nutrir cada aspecto de tu vida.",
+    "cards": [
+      {
+        "title": "Aprender ",
+        "desc": "Tu IA diseña rutas de aprendizaje personalizadas. Encuentra tutores de idiomas, código o arte.",
+        "tag": "EdTech"
+      },
+      {
+        "title": "Ganar ",
+        "desc": "Monetiza tu talento. Ofrece clases o servicios y recibe pagos seguros (Tokens/Cash) validados por Blockchain.",
+        "tag": "FinTech"
+      },
+      {
+        "title": "Conectar ",
+        "desc": "Bienestar real. Encuentra compañeros de deporte, meditación o eventos locales cerca de ti.",
+        "tag": "Social & Sports"
+      }
+    ]
+  },
+  "chatbot": {
+    "welcome": "Hola, soy Scuti. Tu mentor de crecimiento. ¿En qué nos enfocamos hoy?",
+    "thinking": "Analizando tu perfil...",
+    "options": {
+      "advice": "Necesito un consejo",
+      "learn": "Quiero aprender algo nuevo",
+      "earn": "¿Cómo puedo ganar dinero?"
+    },
+    "answers": {
+      "advice": "Para mantener el equilibrio, te sugiero una sesión de meditación o deporte hoy. ¿Te busco un instructor cerca?",
+      "learn": "Excelente. Según tus intereses, veo que te iría bien aprender Inglés o Programación. ¿Busco un tutor?",
+      "earn": "Tienes talento. Puedes publicar tus servicios en el Marketplace. ¿Te ayudo a crear tu perfil de Tutor?"
+    }
+  },
+  "technology": {
+    "title": "Tecnología de Verdad",
+    "subtitle": "No confiamos en la suerte. Confiamos en el código.",
+    "items": [
+      {
+        "title": "Inteligencia Artificial",
+        "desc": "Algoritmos propietarios que aprenden de tu estilo de vida, no solo de tus clics."
+      },
+      {
+        "title": "Blockchain Core",
+        "desc": "Cada logro y transacción se registra en una cadena inmutable. Tu progreso es real y tuyo."
+      },
+      {
+        "title": "Privacidad Zero-Knowledge",
+        "desc": "Tus datos te pertenecen. Ni siquiera nosotros podemos ver lo que no compartes."
+      }
+    ]
+  },
+  "story": {
+    "title": "Nuestro Viaje",
+    "subtitle": "De una chispa en Zúrich a un ecosistema global.",
+    "milestones": [
+      {
+        "year": "2012-2015",
+        "location": "Zúrich, Suiza",
+        "title": "El Origen",
+        "desc": "Frank Ferguson explora los primeros sistemas inteligentes para gestión de tareas y pagos."
+      },
+      {
+        "year": "2019-2023",
+        "location": "Madrid, España",
+        "title": "La Filosofía",
+        "desc": "El concepto evoluciona de Asistente a Mentor. Se codifica la metodología 'Transfocreation'."
+      },
+      {
+        "year": "2022-2024",
+        "location": "Mascate, Omán",
+        "title": "La Innovación",
+        "desc": "Colaboración con el Dr. Abdullah Al Zakwani para crear el MVP con IA y Geolocalización."
+      },
+      {
+        "year": "2025",
+        "location": "Barcelona, España",
+        "title": "Lanzamiento Global",
+        "desc": "Scuti despega. Fusión de EdTech, FinTech y SportsTech bajo Blockchain."
+      }
+    ]
+  },
+  "team": {
+    "title": "Liderazgo Global",
+    "subtitle": "Visionarios uniendo continentes y disciplinas.",
+    "members": [
+      {
+        "name": "Frank Ferguson",
+        "role": "Fundador & Visionario",
+        "bio": "Autor de 'The Power of Transfocreation'. Transformó la idea de un asistente digital en un mentor espiritual y financiero.",
+        "image":"https://media.licdn.com/dms/image/v2/C5103AQG_JDN19Wjoxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1541906493824?e=1766016000&v=beta&t=ZKZBpe5Rc1UUh2CzQzR4Gm7n1WivmcBhkkfxDqDUjqw",
+         "linkedin":"https://www.linkedin.com/in/franklynferguson/"
+      },
+      {
+        "name": "Dr. Abdullah Al Zakwani",
+        "role": "Director Técnico & Co-Fundador",
+        "bio": "Líder de innovación en Omán. Arquitecto de los sistemas de IA y geolocalización que impulsan Scuti.",
+        "image":"https://media.licdn.com/dms/image/v2/C5103AQG_JDN19Wjoxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1541906493824?e=1766016000&v=beta&t=ZKZBpe5Rc1UUh2CzQzR4Gm7n1WivmcBhkkfxDqDUjqw",
+         "linkedin":"https://www.linkedin.com/in/abdullah-al-zakwani-a4543629/"
+      },
+      {
+        "name": "Ana María Guzmán",
+        "role": "Directora de Marketing",
+        "bio": "Estratega creativa conectando la visión de Scuti con una comunidad global en crecimiento.",
+        "image":"https://media.licdn.com/dms/image/v2/C5103AQG_JDN19Wjoxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1541906493824?e=1766016000&v=beta&t=ZKZBpe5Rc1UUh2CzQzR4Gm7n1WivmcBhkkfxDqDUjqw",
+         "linkedin":"https://www.linkedin.com/in/anamariaguzman-publicista/"
+      },
+      {
+        "name": "Randy Cayasso",
+        "role": "Cloud AI TPM",
+        "bio": "Arquitecto de soluciones escalables, asegurando que la plataforma sea robusta y segura.",
+        "image":"https://media.licdn.com/dms/image/v2/C5103AQG_JDN19Wjoxw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1541906493824?e=1766016000&v=beta&t=ZKZBpe5Rc1UUh2CzQzR4Gm7n1WivmcBhkkfxDqDUjqw",
+         "linkedin":"https://www.linkedin.com/in/randy-cayasso-0843341a0/?trk=contact-info"
+      }
+    ],
+    "backed_by": "Respaldado Estratégicamente por"
+  },
+
+  "manifesto": {
+    "background_text": "VERDAD • JUSTICIA • TRANSFORMACIÓN • ",
+    "label": "El Manifiesto Scuti",
+    "core_text": "Creemos que la tecnología, la verdad y la transformación pueden coexistir para elevar a la humanidad. No construimos herramientas para distraer, sino mentores para guiar.",
+    "video_button": "Reproducir Historia",
+    "vision": {
+      "label": "Nuestra Visión",
+      "text": "Un mundo donde la IA no aísla, sino que conecta. Redefinimos el potencial humano fusionando la inteligencia online con la interacción real."
+    },
+    "mission": {
+      "label": "Nuestra Misión",
+      "text": "Construir un ecosistema donde habilidades y comercio prosperen juntos, impulsados por la transparencia del Blockchain."
+    },
+    "values": {
+      "label": "Nuestros Valores",
+      "list": [
+        "Verdad: Integridad vía Blockchain.",
+        "Audacia: Hacemos posible lo imposible.",
+        "Equilibrio: Mente, cuerpo y finanzas."
+      ]
+    }
+  },
+"social": {
+    "title": "La Red Global",
+    "subtitle": "Conecta con aprendices y mentores en más de 120 países.",
+    "tiktok": {
+      "label": "Tendencias",
+      "desc": "Videos cortos y retos virales."
+    },
+    "x": { "label": "Novedades", "desc": "Actualizaciones del ecosistema." },
+    "instagram": { "label": "Estilo de Vida", "desc": "Historias de transformación real." },
+    "linkedin": { "label": "Profesional", "desc": "Red de mentores certificados." }
+  },
+  "cta": {
+    "title": "Tu viaje comienza aquí",
+    "subtitle": "Únete a la comunidad que une crecimiento personal y libertad financiera.",
+    "placeholder_name": "Tu nombre",
+    "placeholder_email": "tu@email.com",
+    "button": "Activar mi Mentor",
+    "success": "¡Bienvenido a Scuti!",
+    "consent_text": "Al unirte, aceptas nuestra",
+    "consent_privacy": "Política de Privacidad",
+    "consent_and": "y",
+    "consent_terms": "Términos."
+  },
+  "tech_page": {
+    "hero": {
+      "badge": "ARQUITECTURA V2.0",
+      "title": "Ingeniería de la Verdad.",
+      "subtitle": "No es magia, es código. Fusionamos la inmutabilidad del Blockchain con la adaptabilidad de la Inteligencia Artificial."
+    },
+    "manifesto": {
+      "background_text": "CÓDIGO • VERDAD • FUTURO • ",
+      "label": "El Manifiesto Técnico",
+      "core_text": "Creemos que la tecnología, la verdad y la transformación pueden coexistir para elevar a la humanidad. No construimos herramientas para distraer, sino mentores para guiar.",
+      "video_cta": "Iniciar Protocolo",
+      "terminal_line1": "> Iniciando sistema Scuti...",
+      "terminal_line2": "> Verificando integridad de datos...",
+      "terminal_line3": "> Conexión humana establecida."
+    }
+  },
+  "legacy_page": {
+    "hero": {
+      "badge": "NUESTRO ADN",
+      "title": "El Origen de la Estrella.",
+      "subtitle": "Scuti no nació en un laboratorio, nació de la necesidad humana de conectar. Esta es la historia de cómo convertimos una idea en un movimiento global."
+    }
+  },
+  "legal_pages": {
+    "back_home": "Volver al Inicio",
+    "last_updated": "Última actualización: Noviembre 2025",
+    "privacy": {
+      "title": "Política de Privacidad",
+      "sections": [
+        {
+          "heading": "1. Introducción",
+          "body": "En Scuti, la privacidad es parte de nuestra arquitectura, no una opción. Esta política explica cómo tratamos tus datos personales dentro de nuestro ecosistema de aprendizaje y mercado."
+        },
+        {
+          "heading": "2. Datos que Recopilamos",
+          "body": "Recopilamos información que nos proporcionas directamente (nombre, email, habilidades) y datos técnicos necesarios para el funcionamiento de la plataforma (geolocalización para conectar con mentores cercanos)."
+        },
+        {
+          "heading": "3. Uso de Blockchain",
+          "body": "Algunas transacciones y certificaciones pueden registrarse en una blockchain pública para garantizar transparencia. Ten en cuenta que estos registros son inmutables."
+        },
+        {
+          "heading": "4. Tus Derechos",
+          "body": "Tienes derecho a acceder, corregir o eliminar tus datos personales de nuestros servidores centralizados en cualquier momento."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "sections": [
+        {
+          "heading": "1. Aceptación",
+          "body": "Al acceder a Scuti, aceptas formar parte de una comunidad basada en el respeto mutuo y el intercambio de valor real."
+        },
+        {
+          "heading": "2. Rol de Scuti",
+          "body": "Scuti actúa como un intermediario tecnológico. No somos empleadores de los tutores ni responsables directos del contenido impartido en las sesiones privadas."
+        },
+        {
+          "heading": "3. Economía y Pagos",
+          "body": "Los pagos realizados a través de la plataforma están asegurados. El uso de tokens para intercambio (Swap) está sujeto a las reglas de la comunidad."
+        },
+        {
+          "heading": "4. Conducta",
+          "body": "Cualquier comportamiento abusivo, discriminatorio o fraudulento resultará en la expulsión inmediata del ecosistema."
+        }
+      ]
+    }
+  },"cookies": {
+    "text": "Usamos cookies para mejorar tu experiencia en el universo Scuti. Al continuar, aceptas nuestra política.",
+    "accept": "Aceptar",
+    "decline": "Rechazar"
+  },
+"footer": {
+    "rights": "Todos los derechos reservados.",
+    "cols": {
+      "product": "Producto",
+      "company": "Compañía",
+      "legal": "Legal"
+    },
+    "links": {
+      "privacy": "Política de Privacidad",
+      "terms": "Términos de Servicio",
+      "contact": "Contacto y Ayuda"
+    }
+  }
+}

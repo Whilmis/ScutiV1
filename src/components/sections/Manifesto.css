@@ -1,0 +1,207 @@
+/* src/components/sections/Manifesto.css */
+
+.manifesto-section {
+  position: relative;
+  background-color: var(--scuti-teal);
+  padding: 8rem 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* MARQUEE FONDO (Sin cambios, solo ajuste de opacidad) */
+.marquee-background {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%) rotate(-3deg) scale(1.1);
+  pointer-events: none;
+  opacity: 0.1; 
+  z-index: 0;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollText 60s linear infinite;
+}
+
+.marquee-text-bg {
+  font-family: 'Inter', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--scuti-navy);
+  text-transform: uppercase;
+  padding-right: 2rem;
+}
+
+/* --- WRAPPER PRINCIPAL --- */
+.manifesto-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* --- A. BLOQUE CENTRAL (EL MANIFIESTO) --- */
+.manifesto-core-block {
+  text-align: center;
+  max-width: 800px;
+  background: rgba(11, 37, 64, 0.4); /* Navy semitransparente */
+  backdrop-filter: blur(10px);
+  padding: 4rem;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manifesto-label {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--scuti-navy); /* Texto oscuro para contraste */
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.manifesto-statement {
+  font-size: 2.5rem;
+  font-weight: 800; /* Extra bold */
+  color: white;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+  font-style: italic; /* Toque editorial */
+}
+
+/* Botón Play */
+.manifesto-play-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s;
+}
+
+.play-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+/* Efecto Pulse en el botón */
+.play-icon-circle::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid white;
+  opacity: 0;
+  animation: pulse-ring 2s infinite;
+}
+
+.manifesto-play-btn:hover .play-icon-circle {
+  background: white;
+  color: var(--scuti-teal);
+  transform: scale(1.1);
+}
+
+/* LÍNEA SEPARADORA */
+.manifesto-line {
+  width: 2px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* --- B. GRID DE TARJETAS (PILARES) --- */
+.manifesto-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* (Los estilos de .philosophy-card son iguales que antes, 
+    solo asegúrate de que el texto sea legible sobre Teal) */
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  padding: 2.5rem 2rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card-icon {
+  background: white;
+  color: var(--scuti-teal);
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.values-list {
+  padding-left: 1.2rem;
+}
+.values-list li {
+  margin-bottom: 0.5rem;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); } 
+}
+
+/* RESPONSIVE */
+@media (max-width: 968px) {
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+  }
+  .manifesto-core-block {
+    padding: 2rem;
+  }
+  .manifesto-statement {
+    font-size: 1.8rem;
+  }
+}

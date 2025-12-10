@@ -1,0 +1,140 @@
+/* src/components/layout/Footer.css */
+
+.footer {
+  background-color: #051a2e;
+  color: white;
+  padding: 5rem 2rem 6rem; /* Aumenté el padding inferior para que el Chatbot no tape los links */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+  /* --- SOLUCIÓN DEL CLIC --- */
+  position: relative; 
+  z-index: 50; /* Esto asegura que esté encima de los glows de otras secciones */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* MARCA */
+.footer-brand {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-img-logo {
+  width: 40px;
+  height: auto;
+}
+
+.footer-tagline {
+  color: var(--scuti-teal-light);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ENLACES */
+.footer-links-grid {
+  flex: 2;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-col h4 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--scuti-teal);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.8rem;
+}
+
+/* --- CLASE NUEVA PARA BOTONES TIPO LINK --- */
+.footer-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  text-align: left;
+}
+
+.footer-link-btn:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* BARRA INFERIOR */
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover {
+  color: var(--scuti-teal);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .footer-links-grid {
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

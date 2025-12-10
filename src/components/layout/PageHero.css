@@ -1,0 +1,50 @@
+.page-hero {
+  position: relative;
+  /* Altura menor que el Hero del Home */
+  height: 50vh; 
+  min-height: 400px;
+  background-color: var(--scuti-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 80px; /* Compensar Navbar */
+  overflow: hidden;
+}
+
+.page-hero-container {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+  max-width: 800px;
+}
+
+.page-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--scuti-cream);
+  margin-bottom: 1rem;
+}
+
+.page-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--scuti-teal-light);
+  opacity: 0.9;
+}
+
+/* Glow de fondo */
+.page-hero-glow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(45, 155, 155, 0.15) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .page-hero-title { font-size: 2.5rem; }
+}
