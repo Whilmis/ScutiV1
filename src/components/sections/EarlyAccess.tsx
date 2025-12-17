@@ -21,9 +21,9 @@ const EarlyAccess: React.FC = () => {
 
     setStatus('loading');
 
-    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_ed2rlr9';
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_ejft51l';
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'EbEldik7lyNTXM7a4';
 
     try {
       await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current!, PUBLIC_KEY);
@@ -59,7 +59,7 @@ const EarlyAccess: React.FC = () => {
               <User className="input-icon" size={20} />
               <input 
                 type="text" 
-                name="user_name" 
+                name="name" 
                 placeholder={t('cta.placeholder_name')} 
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -73,7 +73,7 @@ const EarlyAccess: React.FC = () => {
               <Mail className="input-icon" size={20} />
               <input 
                 type="email" 
-                name="user_email" 
+                name="gmail" 
                 placeholder={t('cta.placeholder_email')} 
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
