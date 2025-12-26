@@ -170,8 +170,7 @@ const Chatbot: React.FC = () => {
 
         {!isTyping && (
           <div className="chat-options">
-            <button onClick={() => handleOptionClick('advice')}>✨ {t('chatbot.options.advice') as string}</button>
-            <button onClick={() => handleOptionClick('learn')}>🎓 {t('chatbot.options.learn') as string}</button>
+        
             <button onClick={() => handleOptionClick('earn')}>💰 {t('chatbot.options.earn') as string}</button>
           </div>
         )}
